@@ -2,9 +2,9 @@
 
 return [
     'mysql' => [
-        'user' => 'id9444115_task',
-        'database' => 'id9444115_task',
-        'password' => 'task123456',
+        'user' => 'root',
+        'database' => 'task',
+        'password' => '',
         'server' => 'localhost'
     ],
 

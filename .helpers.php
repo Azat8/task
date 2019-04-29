@@ -34,7 +34,7 @@ if(!function_exists('view')) {
             $child_data = $child_datas;
         }
         $data = $datas;
-        $path = str_replace('.','/',$path);
+        $path = str_replace('.','/', $path);
         return include(__VIEW__.$path.'.php');
     }
 }

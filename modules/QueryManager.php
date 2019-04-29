@@ -44,10 +44,12 @@ trait QueryManager
             self::$sql_att['values'].self::$sql_att['space'].self::$sql_att['('].$request.self::$sql_att[')'];
     }
 
-    private static function modelGetQuery($model)
+    private static function modelGetQuery($model, $column, $order)
     {
         return self::$sql_att['select'].self::$sql_att['space'].self::$sql_att['*'].
-            self::$sql_att['space'].self::$sql_att['from'].self::$sql_att['space'].$model;
+            self::$sql_att['space'].self::$sql_att['from'].self::$sql_att['space'].$model.=
+            $column ? self::$sql_att['space'].self::$sql_att['order'].self::$sql_att['space'].self::$sql_att['by'].self::$sql_att['space'].
+            $column.self::$sql_att['space'].$order : '';
     }
 
     private function updateQuery($model, $id, $request)

@@ -43,9 +43,9 @@
                                 <?php foreach ($child_data as $key => $task):?>
                                     <tr role="row" class="<?=$key % 2 ? 'odd' : 'even'?>">
                                         <td><?=$task['id']?></td>
-                                        <td><?=$task['name']?></td>
-                                        <td><?=$task['email']?></td>
-                                        <td><?=$task['task']?></td>
+                                        <td><?=htmlspecialchars($task['name'])?></td>
+                                        <td><?=htmlspecialchars($task['email'])?></td>
+                                        <td><?=htmlspecialchars($task['task'])?></td>
                                         <td><?=$task['created_at']?></td>
                                         <td>
                                             <a class="btn btn-success btn-xs" href="<?=url('/admin/task/update', $task['id'])?>"><i class="fa fa-edit"></i></a>

@@ -51,17 +51,17 @@ class Eloquent implements \interfaces\Eloquent
         self::$collection = self::getTable();
     }
 
-    public static function get()
+    public static function get($column = null, $order = null)
     {
         // TODO: Implement get() method.
         self::$this_event = (__FUNCTION__);
 
-        self::$this_query = self::modelGetQuery(self::$static_table);
+        self::$this_query = self::modelGetQuery(self::$static_table, $column, $order);
 
+//        dd(self::$this_query);
         self::append_orginal_attributes();
 
         self::selectQuery(self::$connection, self::$this_query, true);
-
         return self::$collection;
     }
 
@@ -134,6 +134,7 @@ class Eloquent implements \interfaces\Eloquent
     {
         // TODO: Implement orderBY() method.
         self::$this_event = (__FUNCTION__);
+        return $this;
     }
 }
 

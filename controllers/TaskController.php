@@ -29,7 +29,8 @@ class TaskController extends controllers
     {
         $tasks = new Task;
         self::$data['path'] = 'admin.partials.crud.index';
-        self::$data['child_datas'] = $tasks::get();
+        self::$data['child_datas'] = $tasks::get('id', 'DESC');
+//        dd(self::$data['child_datas']);
         return view('admin.layout.app', self::$data['child_datas'], self::$data);
     }
 
